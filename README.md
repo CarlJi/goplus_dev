@@ -9,3 +9,6 @@ Go+ develop demo
 - paths
 
 ### Go/Go+ types
+
+- load
+- types_check
