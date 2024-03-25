@@ -3,6 +3,8 @@ package main
 import (
 	"fmt"
 
+	"github.com/goplus/gop/ast"
+
 	"github.com/goplus/gop/parser"
 	"github.com/goplus/gop/token"
 )
@@ -22,5 +24,19 @@ func main() {
 	}
 	for _, d := range f.Decls {
 		fmt.Printf("%T %v\n", d, d)
+		switch d := d.(type) {
+		case *ast.OverloadFuncDecl:
+			switch v := d.Funcs[0].(type) {
+			case *ast.Ident:
+				if obj := f.Scope.Lookup(v.Name); obj != nil {
+					if decl, ok := obj.Decl.(*ast.FuncDecl); ok {
+						fmt.Println(decl.Type)
+					}
+				}
+			case *ast.FuncLit:
+				//v.Type
+				fmt.Println(v.Type)
+			}
+		}
 	}
 }

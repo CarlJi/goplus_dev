@@ -10,15 +10,17 @@ import (
 
 func main() {
 	fset := token.NewFileSet()
-	f, err := parser.ParseFile(fset, "../../data/main.gop", nil, parser.ParseComments)
+	f, err := parser.ParseFile(fset, "../testdata/main.gop", nil, parser.ParseComments)
 	if err != nil {
 		panic(err)
 	}
 	fmt.Println(f)
 	ast.Inspect(f, func(n ast.Node) bool {
-		switch n.(type) {
+		switch x := n.(type) {
 		case *ast.CallExpr:
-			fmt.Printf("%#v %v\n", n, fset.Position(n.Pos()))
+			if x.IsCommand() {
+				fmt.Printf("%#v %v\n", n, fset.Position(n.Pos()))
+			}
 		}
 		return true
 	})

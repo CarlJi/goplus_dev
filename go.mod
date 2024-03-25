@@ -1,6 +1,6 @@
 module github.com/visualfc/goplus_dev
 
-go 1.21.3
+go 1.18
 
 require (
 	github.com/goplus/gop v1.2.5

@@ -19,4 +19,6 @@ func (t *T) Info() string {
 
 func main() {
 	fmt.Println(version)
+	a := 100
+	_ = a
 }

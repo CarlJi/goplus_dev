@@ -1,0 +1,9 @@
+var (
+	M
+	X int
+	Y int
+)
+
+func demo() {}
+
+println X,Y
