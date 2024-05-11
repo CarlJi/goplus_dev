@@ -15,12 +15,12 @@ type T struct {
 	X int
 	Y int
 }
-//line goplus/testdata/main.gop:13:1
+//line goplus/testdata/main.gop:14:1
 func Add__0(a int, b int) int {
 //line goplus/testdata/main.gop:15:1
 	return a + b
 }
-//line goplus/testdata/main.gop:13:1
+//line goplus/testdata/main.gop:17:1
 func Add__1(a float64, b float64) float64 {
 //line goplus/testdata/main.gop:18:1
 	return a + b

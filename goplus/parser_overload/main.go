@@ -4,7 +4,6 @@ import (
 	"fmt"
 
 	"github.com/goplus/gop/ast"
-
 	"github.com/goplus/gop/parser"
 	"github.com/goplus/gop/token"
 )
@@ -17,6 +16,9 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
+	fmt.Println("======>")
+	ast.Print(fset, f)
+	fmt.Println("======>")
 	fmt.Println(f)
 	fmt.Println(f.Name)
 	for _, i := range f.Imports {
